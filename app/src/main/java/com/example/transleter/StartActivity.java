@@ -15,11 +15,15 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         pref = getSharedPreferences("myPref", MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-
-        editor.putBoolean("first", true);
-        editor.putString("car", "https://media.spreadthesign.com/video/mp4/12/345841.mp4");
-        editor.apply();
         Intent i = new Intent(StartActivity.this, MainActivity.class);
-        startActivity(i);
+
+        if (pref.contains("first")){
+            startActivity(i);
+        }else {
+            editor.putBoolean("first", true);
+            editor.putString("car", "https://media.spreadthesign.com/video/mp4/12/345841.mp4");
+            editor.apply();
+            startActivity(i);
+        }
     }
 }
