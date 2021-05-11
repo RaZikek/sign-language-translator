@@ -181,7 +181,7 @@ public class StartActivity extends AppCompatActivity {
             editor.putString("", "");
             editor.putString("", "");
             editor.putString("", "");
-      */      editor.putString("", "");
+            editor.putString("", ""); */
             editor.apply();
             startActivity(i);
         }
