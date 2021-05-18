@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         videoView = findViewById(R.id.videoView);
         button = findViewById(R.id.button);
-        textView = findViewById(R.id.textView2);
         search = findViewById(R.id.search);
         SharedPreferences pref = getSharedPreferences("myPref", MODE_PRIVATE);
         button.setOnClickListener(new View.OnClickListener() {
