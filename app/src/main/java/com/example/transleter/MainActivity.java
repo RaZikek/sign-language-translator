@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                   videoView.setVideoURI(Uri.parse(pref.getString(search.getText().toString().toLowerCase(), null)));
-                   videoView.start();
+                if (search.getText().toString() != null) {
+                    videoView.setVideoURI(Uri.parse(pref.getString(search.getText().toString().toLowerCase(), null)));
+                    videoView.start();
+                }else
+                    Toast.makeText(MainActivity.this,"Такого слова пока что не добавили. Извините",Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
 
 
     }
