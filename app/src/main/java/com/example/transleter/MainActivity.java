@@ -30,10 +30,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (search.getText().toString() != null) {
-                    videoView.setVideoURI(Uri.parse(pref.getString(search.getText().toString().toLowerCase(), null)));
-                    videoView.start();
-                }else
-                    Toast.makeText(MainActivity.this,"Такого слова пока что не добавили. Извините",Toast.LENGTH_SHORT).show();
+                    if (search.getText().toString().isEmpty()) {
+                        videoView.setVideoURI(Uri.parse(pref.getString(search.getText().toString().toLowerCase(), null)));
+                        videoView.start();
+                    }else {
+                        Toast.makeText(MainActivity.this,"Такого слова нет. Извините",Toast.LENGTH_SHORT).show();
+                    }
+                } else
+                    Toast.makeText(MainActivity.this, "Введите слово", Toast.LENGTH_SHORT).show();
             }
         });
 
