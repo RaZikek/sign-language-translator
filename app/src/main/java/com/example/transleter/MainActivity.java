@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (search.getText().toString() != null) {
-                    if (search.getText().toString().isEmpty()) {
-                        videoView.setVideoURI(Uri.parse(pref.getString(search.getText().toString().toLowerCase(), null)));
+                if (!search.getText().toString().isEmpty()) {
+                    if (!search.getText().toString().isEmpty()) {
+                        videoView.setVideoURI(Uri.parse(pref.getString(search.getText().toString().toLowerCase(), "https://media.spreadthesign.com/video/mp4/12/4136.mp4")));
                         videoView.start();
                     }else {
                         Toast.makeText(MainActivity.this,"Такого слова нет. Извините",Toast.LENGTH_SHORT).show();
