@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
                 if (!search.getText().toString().isEmpty()) {
                     Pref pref1 = new Pref();
                     pref1.execute();
-                    videoView.setVideoURI(Uri.parse(pref.getString("n", "https://media.spreadthesign.com/video/mp4/12/4136.mp4")));
-                    videoView.start();
                 } else
                     Toast.makeText(MainActivity.this, "Введите слово", Toast.LENGTH_SHORT).show();
             }
