@@ -66,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(Void... voids) {
-            SharedPreferences pref = getSharedPreferences("myPref", MODE_PRIVATE);
-            SharedPreferences.Editor editor = pref.edit();
             Document doc = null;
 
             String url = "https://www.spreadthesign.com/ru.ru/search/?q=";
